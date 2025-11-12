@@ -1,0 +1,174 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Argentina</title>
+<style>
+  :root{--blue:#0b5fa5;--light:#eaf4ff;--white:#fff;--card:#f7fbff;--accent:#cfe9ff;--text:#05203a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--blue),#1f76c3);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .wrap{width:100%;max-width:760px;background:var(--card);border-radius:14px;box-shadow:0 12px 30px rgba(2,24,40,0.18);overflow:hidden}
+  header{padding:28px 24px;text-align:center;background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));}
+  h1{margin:6px 0;font-size:40px;color:#033b73;letter-spacing:0.5px}
+  p.lead{margin:0;color:#14588a;opacity:0.9}
+  .content{padding:20px}
+  .question{background:var(--white);border-radius:10px;padding:12px 14px;margin:12px 0;display:flex;gap:12px;align-items:center;box-shadow:0 6px 18px rgba(2,24,40,0.06)}
+  .thumb{width:72px;height:72px;border-radius:8px;flex:0 0 72px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--accent)}
+  .thumb img{width:100%;height:100%;object-fit:cover}
+  .qbody{flex:1}
+  .qtitle{font-weight:700;margin:0 0 6px;color:#023a66}
+  .options{display:flex;flex-direction:column;gap:8px;margin:6px 0}
+  label.opt{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;border:2px solid #eef6ff;cursor:pointer;transition:all .12s;background:transparent}
+  label.opt:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(2,24,40,0.06)}
+  input[type="radio"]{width:18px;height:18px}
+  .btns{display:flex;gap:12px;justify-content:center;padding:12px 20px 28px}
+  button{background:#0b5fa5;color:white;border:0;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+  button.secondary{background:transparent;color:#0b5fa5;border:2px solid rgba(11,95,165,0.12)}
+  #result{padding:12px 18px;text-align:center;font-weight:700}
+  footer{font-size:13px;text-align:center;padding:14px;color:#0b4f7a}
+  .correct{border-color:#7ad39a;background:linear-gradient(180deg,#ecfff4,#f5fff8)}
+  .wrong{border-color:#ffb3b3;background:linear-gradient(180deg,#fff6f6,#fff9f9)}
+  @media(max-width:520px){.thumb{display:none} h1{font-size:28px} .question{padding:10px}}
+</style>
+</head>
+<body>
+<div class="wrap" role="main">
+  <header>
+    <h1>Argentina</h1>
+    <p class="lead">Responde seleccionando una opción. Al final verás tu puntaje.</p>
+  </header>
+  <div class="content">
+    <form id="quiz">
+      <!-- Pregunta 1 -->
+      <div class="question">
+        <div class="thumb"><img alt="Tango" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Teatro_Colon_-_Buenos_Aires_-_Argentina.jpg/640px-Teatro_Colon_-_Buenos_Aires_-_Argentina.jpg"></div>
+        <div class="qbody">
+          <div class="qtitle">1) ¿Cuál es el baile típico más famoso de Argentina?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q1" value="a"> Salsa</label>
+            <label class="opt"><input type="radio" name="q1" value="b"> Tango</label>
+            <label class="opt"><input type="radio" name="q1" value="c"> Flamenco</label>
+            <label class="opt"><input type="radio" name="q1" value="d"> Cumbia</label>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 2 -->
+      <div class="question">
+        <div class="thumb"><img alt="Dulce de leche" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Dulce_de_leche_1.jpg/640px-Dulce_de_leche_1.jpg"></div>
+        <div class="qbody">
+          <div class="qtitle">2) ¿Qué dulce acompaña tradicionalmente al mate?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q2" value="a"> Cajeta</label>
+            <label class="opt"><input type="radio" name="q2" value="b"> Mermelada</label>
+            <label class="opt"><input type="radio" name="q2" value="c"> Dulce de leche</label>
+            <label class="opt"><input type="radio" name="q2" value="d"> Chocolate</label>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 3 -->
+      <div class="question">
+        <div class="thumb"><img alt="Obelisco" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/El_Obelisco_de_Buenos_Aires_%28cropped%29.jpg/640px-El_Obelisco_de_Buenos_Aires_%28cropped%29.jpg"></div>
+        <div class="qbody">
+          <div class="qtitle">3) ¿En qué ciudad se encuentra el Obelisco?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q3" value="a"> Córdoba</label>
+            <label class="opt"><input type="radio" name="q3" value="b"> Rosario</label>
+            <label class="opt"><input type="radio" name="q3" value="c"> Mendoza</label>
+            <label class="opt"><input type="radio" name="q3" value="d"> Buenos Aires</label>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 4 -->
+      <div class="question">
+        <div class="thumb"><img alt="Escudo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Coat_of_arms_of_Argentina.svg/640px-Coat_of_arms_of_Argentina.svg.png"></div>
+        <div class="qbody">
+          <div class="qtitle">4) ¿Qué animal aparece en el escudo argentino?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q4" value="a"> Cóndor</label>
+            <label class="opt"><input type="radio" name="q4" value="b"> Llama</label>
+            <label class="opt"><input type="radio" name="q4" value="c"> Caballo</label>
+            <label class="opt"><input type="radio" name="q4" value="d"> Gorrión</label>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 5 -->
+      <div class="question">
+        <div class="thumb"><img alt="Empanadas" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Empanadas_salte%C3%B1as.jpg/640px-Empanadas_salte%C3%B1as.jpg"></div>
+        <div class="qbody">
+          <div class="qtitle">5) ¿Cuál de estos es un platillo típico argentino?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q5" value="a"> Pupusas</label>
+            <label class="opt"><input type="radio" name="q5" value="b"> Tacos</label>
+            <label class="opt"><input type="radio" name="q5" value="c"> Empanadas</label>
+            <label class="opt"><input type="radio" name="q5" value="d"> Arepas</label>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 6 -->
+      <div class="question">
+        <div class="thumb"><img alt="Messi" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Lionel_Messi_2018.jpg/640px-Lionel_Messi_2018.jpg"></div>
+        <div class="qbody">
+          <div class="qtitle">6) ¿Qué futbolista argentino es mundialmente famoso?</div>
+          <div class="options">
+            <label class="opt"><input type="radio" name="q6" value="a"> Neymar</label>
+            <label class="opt"><input type="radio" name="q6" value="b"> Lionel Messi</label>
+            <label class="opt"><input type="radio" name="q6" value="c"> Cristiano Ronaldo</label>
+            <label class="opt"><input type="radio" name="q6" value="d"> Diego Forlán</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="btns">
+        <button type="button" id="submit">Ver resultado</button>
+        <button type="button" id="reset" class="secondary">Reiniciar</button>
+      </div>
+
+      <div id="result" aria-live="polite"></div>
+    </form>
+  </div>
+  <footer>Hecho para exposición · Argentina</footer>
+</div>
+
+<script>
+// Respuestas correctas
+const answers = {'q1':'b','q2':'c','q3':'d','q4':'a','q5':'c','q6':'b'};
+
+// Helpers
+function getSelected(q){const el=document.querySelector('input[name='+q+']:checked'); return el?el.value:null;}
+
+// Mark options and compute score
+function showResult(){
+  const total=6; let score=0;
+  for(const q in answers){
+    const sel=getSelected(q);
+    // mark visual
+    document.querySelectorAll('input[name='+q+']').forEach(i=>{
+      const lab=i.closest('label');
+      lab.classList.remove('correct','wrong');
+      if(i.checked){
+        if(i.value===answers[q]){ lab.classList.add('correct'); score++; }
+        else lab.classList.add('wrong');
+      }
+    });
+  }
+  const msg = score>=5? '¡Sos más argentina que el mate! 🇦🇷' : (score>=3? '¡Buen intento! 🇦🇷' : 'Necesitás un mate urgente 😅');
+  const resDiv = document.getElementById('result');
+  resDiv.innerHTML = 'Puntaje: ' + score + '/' + total + '<br>' + msg;
+  window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});
+}
+
+// Events
+document.getElementById('submit').addEventListener('click', ()=>{
+  showResult();
+});
+
+document.getElementById('reset').addEventListener('click', ()=>{
+  document.getElementById('quiz').reset();
+  document.getElementById('result').innerHTML='';
+  document.querySelectorAll('label.opt').forEach(l=>l.classList.remove('correct','wrong'));
+});
+</script>
+</body>
+</html>
